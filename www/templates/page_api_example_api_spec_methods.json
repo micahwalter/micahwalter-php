@@ -1,0 +1,38 @@
+{literal}{
+    "methods": [
+        {
+            "description": "Return the list of available API response methods.", 
+            "errors": [], 
+            "example": "...", 
+            "method": "GET", 
+            "name": "api.spec.methods", 
+            "parameters": [], 
+            "requires_auth": 0
+        }, 
+        {
+            "description": "Return the list of valid API response formats, including the default format", 
+            "errors": [], 
+            "method": "GET", 
+            "name": "api.spec.formats", 
+            "parameters": [], 
+            "requires_auth": 0
+        }, 
+        {
+            "description": "A testing method which echo's all parameters back in the response.", 
+            "errors": [], 
+            "method": "GET", 
+            "name": "api.test.echo", 
+            "parameters": [], 
+            "requires_auth": 0
+        }, 
+        {
+            "description": "Return a test error from the API", 
+            "errors": [], 
+            "method": "GET", 
+            "name": "api.test.error", 
+            "parameters": [], 
+            "requires_auth": 0
+        }
+    ], 
+    "stat": "ok"
+}{/literal}
