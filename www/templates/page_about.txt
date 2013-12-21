@@ -1,3 +1,4 @@
+{assign var='page_title' value='About' nav_tab='about'}
 {include file='inc_head.txt' nav_tab='about'}
 
 <div class="container">
