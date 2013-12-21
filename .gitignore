@@ -3,3 +3,4 @@ www/include/config.php
 .vagrant
 tests/coverage.state
 coverage/
+.DS_Store
