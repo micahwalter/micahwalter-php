@@ -4,6 +4,9 @@
 <div class="container">
 <h1>Sign In</h1>
 
+	<div class="row">
+	<div class="col-md-6">
+
 	{if $error_missing}	<p class="alert alert-error">Please enter your email address and password.</p>{/if}
 	{if $error_nouser}	<p class="alert alert-error">Sorry, we can't find an account with that email address.</p>{/if}
 	{if $error_deleted}	<p class="alert alert-error">Account has been deleted.</p>{/if}
@@ -31,6 +34,9 @@
 	{if $cfg.enable_feature_password_retrieval}
 	<p><a href="/forgot">Forgotten your password?</a></p>
 	{/if}
+	
+	</div>
+	</div>
 </div>
 
 {include file='inc_foot.txt'}

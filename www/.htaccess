@@ -47,23 +47,8 @@ ErrorDocument 403 /403.php
 # Get mod_rewrite fired up
 RewriteEngine on
 
-# See all this stuff that's been commented out? It's a lot of hoop-jumping
-# to separate API calls (api.example.com/rest) from all the other user-level
-# administrative pages (example.com/api/methods) and to make sure things that
-# need to be done over SSL are (like OAuth2). By default it's all commented out
-# because what do I know about your webserver is configured. So spend a
-# couple minutes looking at all this stuff and thinking about it and adjusting
-# accordingly. Also: remember all the security around OAuth2 is predicated
-# around the use of SSL. (20121103/straup)
-
-# The API (as in both api.example.com and example.com/api)
-# Ensure that all traffic to the API proper is over HTTPS
-# Note that this is a api.example.com host not example.com
-# (20121025/straup)
-
-# RewriteCond %{HTTP_HOST} 	^api.(.*)$
-# RewriteCond %{HTTPS} off
-# RewriteRule (.*) https://%{HTTP_HOST}/$1?%{QUERY_STRING}	[R,L]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}/$1?%{QUERY_STRING}	[R,L]
 
 # The most basic rewrite, as this is the actual API
 
