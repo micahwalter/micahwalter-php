@@ -1,0 +1,15 @@
+{assign var="page_title" value=$profile.profile.full_name nav_tab='profile'}
+{include file="inc_head.txt"}
+
+	<div class="row">
+	    <div class="span12 centered-text">
+	        <h1>{ $profile.profile.full_name }</h1>
+	    </div>
+	</div>
+	
+	<div class="col-sm-6 col-sm-offset-3">
+		<hr>
+		<p>{ $profile.profile.bio|@nl2br }</p>
+	</div>
+	 			
+{include file="inc_foot.txt"}

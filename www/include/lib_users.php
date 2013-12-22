@@ -115,6 +115,16 @@
 
 		return $user;
 	}
+	
+	#################################################################
+	
+	function users_get_by_username($username){
+		
+		$enc_username = AddSlashes($username);
+		
+		return db_single(db_fetch("SELECT * FROM users WHERE username='{$enc_username}'"));
+		
+	}
 
 	#################################################################
 
