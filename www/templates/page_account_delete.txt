@@ -1,9 +1,10 @@
 {assign var='page_title' value="Delete your account" nav_tab='account'}
 {include file="inc_head.txt"}
 
-<div class="container">
 	{if $error_deleting}<p class="alert alert-error">Something went wrong. Try again later pls.</p>{/if}
 
+	<h1>Delete your account</h1>
+	
 	<p>Are you sure you want to delete your account?</p>
 
 	<form action="/account/delete" method="post" accept-encoding="UTF-8" class="form-horizontal">
@@ -12,6 +13,5 @@
 
 		<input type="SUBMIT" class="btn btn-danger" value="DELETE MY ACCOUNT" />
 	</form>
-</div>
 
 {include file="inc_foot.txt"}

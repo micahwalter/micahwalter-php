@@ -1,7 +1,6 @@
 {assign var='page_title' value='About' nav_tab='about'}
 {include file='inc_head.txt' nav_tab='about'}
 
-<div class="container">
 	<h1>About</h1>
 
 	<p>Fanny pack sed post-ironic, voluptate deserunt Marfa blog beard put a bird on it nesciunt labore Bushwick. Reprehenderit gentrify tousled pour-over dolor. Biodiesel hella fingerstache next level four loko sustainable, shabby chic Etsy raw denim keytar ea salvia cupidatat trust fund. Pop-up meh Tumblr, tempor photo booth forage ut enim quis irony tote bag magna Wes Anderson bitters sunt. Kale chips ea culpa lo-fi. Excepteur flannel id Tumblr Blue Bottle. Umami Blue Bottle tousled Banksy.
@@ -19,6 +18,5 @@
 	<p>Plaid vegan High Life, hella Odd Future Bushwick craft beer banh mi ethical meh enim adipisicing sed XOXO flexitarian. Carles dolor jean shorts Terry Richardson mixtape. Put a bird on it High Life mlkshk est delectus minim blog +1, selvage squid excepteur mustache plaid skateboard 8-bit. Vinyl exercitation velit small batch keytar sint, stumptown fugiat mollit aliqua ut. Raw denim direct trade food truck tote bag adipisicing. Before they sold out master cleanse banjo Thundercats cardigan organic, synth mumblecore authentic ut put a bird on it deep v. Aliquip art party excepteur Carles, culpa McSweeney's fugiat freegan meh ullamco.</p>
 
 	<p>Wolf consequat letterpress, Tonx direct trade forage sunt pug single-origin coffee. Butcher hashtag street art banjo sustainable in before they sold out, VHS sapiente. Sed sustainable sint quinoa Pinterest church-key. Consectetur slow-carb in, chia esse placeat aliqua sustainable. Actually authentic qui eu ethnic, Vice pickled viral try-hard letterpress veniam retro slow-carb quis ex. Slow-carb mlkshk 3 wolf moon umami, bespoke flexitarian butcher dolor id asymmetrical fanny pack odio YOLO pug plaid. Yr small batch artisan dolore, exercitation you probably haven't heard of them 3 wolf moon tattooed irure 90's minim reprehenderit.</p>
-</div>
 
 {include file='inc_foot.txt'}

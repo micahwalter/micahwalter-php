@@ -1,8 +1,6 @@
 {assign var='page_title' value='Home' nav_tab='home'}
 {include file='inc_head.txt' nav_tab='home'}
 
-<div class="container">
     <h1>Home!</h1>
-</div>
 
 {include file='inc_foot.txt'}

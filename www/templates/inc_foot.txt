@@ -1,10 +1,15 @@
-</div>
+</div><!-- /container -->
 
-    <div class="container">
+	<div class="container">
+     <hr class="footer-divider">
+
+      <!-- FOOTER -->
       <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Micah Walter &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="{$cfg.abs_root_url}api">API</a></p>
       </footer>
-
-    </div> <!-- /container -->
+	</div><!-- /container -->
+	  
 
     <!-- Le javascript
     ================================================== -->

@@ -1,7 +1,6 @@
 {assign var='page_title' value='Contact' nav_tab='contact'}
 {include file='inc_head.txt' nav_tab='contact'}
 
-<div class="container">
 	<h1>Contact</h1>
 	
 	<div class="row">
@@ -35,6 +34,5 @@
 	</form>
 	</div>
 	</div>
-</div>
 
 {include file='inc_foot.txt'}

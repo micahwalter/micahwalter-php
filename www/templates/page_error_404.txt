@@ -1,6 +1,5 @@
 {"HTTP/1.1 404 Not Found"|header}{include file='inc_head.txt' page_title='Page Not Found'}
 
-<div class="container">
 	<h1>Page not found</h1>
 
 	<p>We can't find the page you requested. Sorry :(</p>
@@ -11,6 +10,5 @@
 	</div>
 {/if}
 
-</div>
 
 {include file='inc_foot.txt'}

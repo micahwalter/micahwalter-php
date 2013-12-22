@@ -1,8 +1,8 @@
 {assign var='page_title' value='Sign out' nav_tab='signout'}
 {include file='inc_head.txt'}
 
-<div class="container">
+	<h1>Bye bye!</h1>
+
 	<p>You are signed out!</p>
-</div>
 
 {include file='inc_foot.txt'}
