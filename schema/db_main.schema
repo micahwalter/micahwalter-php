@@ -36,6 +36,19 @@ CREATE TABLE `users_profile` (
   KEY `by_user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `posts`;
+
+CREATE TABLE `posts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `artisanal_id` BIGINT(20) UNSIGNED NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `by_artisanal_id` (`artisanal_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `ApiKeys`;
 
 CREATE TABLE `ApiKeys` (

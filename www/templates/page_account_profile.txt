@@ -1,0 +1,38 @@
+{assign var="page_title" value="Update your profile" nav_tab='profile'}
+{include file="inc_head.txt"}
+
+
+	<h1>Update your profile</h1>
+	
+	<div class="row">
+	<div class="col-md-6">
+	
+
+{if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
+
+<form action="{$cfg.abs_root_url}account/profile" method="post" accept-encoding="UTF-8" role="form">
+	<input type="hidden" name="change" value="1" />
+	
+	<div class="form-group">
+		<label for="full_name">Full Name</label>
+		<input type="text" class="form-control" name="full_name" size="40" value="{ $profile.profile.full_name}" />
+	</div>
+
+	<div class="form-group">
+		<label for="bio">Bio</label>
+		<textarea class="form-control" id="bio" name="bio" rows="10">{ $profile.profile.bio }</textarea>
+	</div>
+	
+	
+	
+	<div class="form-group">
+		<input type="submit" class="btn btn-default" value="Update my profile" />
+
+		{if $smarty.post}<a href="{$cfg.abs_root_url}@{$cfg.user.username|escape}" class="btn btn-primary active" role="button">View your profile</a>{/if}
+	</div>
+</form>
+
+	</div>
+	</div>
+	
+{include file="inc_foot.txt"}

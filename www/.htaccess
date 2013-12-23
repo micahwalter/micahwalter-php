@@ -108,6 +108,7 @@ RewriteRule ^reset/([a-zA-Z0-9]+)$	reset.php?reset=$1	[L,QSA]
 # Account stuff
 
 RewriteRule  ^account$			account.php		[L]
+RewriteRule  ^account/profile$		account_profile.php		[L]
 RewriteRule  ^account/password$		account_password.php	[L]
 RewriteRule  ^account/delete$		account_delete.php	[L]
 
@@ -119,6 +120,7 @@ RewriteRule ^contact$			contact.php 		[L,QSA]
 # Profile
 
 RewriteRule  ^@([a-zA-Z0-9]+)/?$			profile.php?user_name=$1&%{QUERY_STRING}		[L]
+
 
 # Test pages
 

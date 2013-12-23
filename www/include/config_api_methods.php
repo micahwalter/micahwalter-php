@@ -32,6 +32,21 @@
 			"library" => "api_test"
 		),
 
+		"profile.getInfo" => array(
+			"description" => "Return a users profile",
+			"documented" => 1,
+			"enabled" => 1,
+			"library" => "api_profile",
+            "parameters" => array(
+                    array(
+                            "name" => "username",
+                            "description" => "A valid Micah Walter username",
+                            "required" => 1
+                    )
+            )
+			
+		),
+
 	), $GLOBALS['cfg']['api']['methods']);
 
 	########################################################################
