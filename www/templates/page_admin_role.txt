@@ -1,0 +1,38 @@
+{assign var="page_title" value="Update this role" nav_tab='roles'}
+{include file="inc_head.txt"}
+
+
+	<h1>Update this role</h1>
+	
+	<div class="row">
+	<div class="col-md-6">
+	
+
+{if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
+
+<form action="{$cfg.abs_root_url}admin/roles/{$role.id}" method="post" accept-encoding="UTF-8" role="form">
+	<input type="hidden" name="change" value="1" />
+	
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" class="form-control" name="title" size="40" value="{ $role.title}" />
+	</div>
+
+	<div class="form-group">
+		<label for="description">Description</label>
+		<input type="text" class="form-control" name="description" size="40" value="{ $role.description}" />
+	</div>
+	
+	
+	
+	<div class="form-group">
+		<input type="submit" class="btn btn-default" value="Update Role" />
+
+		<a href="{$cfg.abs_root_url}admin/roles/{$role.id}/delete" class="btn btn-danger active" role="button">Delete Role</a>
+	</div>
+</form>
+
+	</div>
+	</div>
+	
+{include file="inc_foot.txt"}

@@ -117,6 +117,8 @@ RewriteRule  ^account/delete$		account_delete.php	[L]
 RewriteRule  ^admin$			admin.php		[L]
 RewriteRule  ^admin/users$			admin_users.php		[L]
 RewriteRule  ^admin/roles$			admin_roles.php		[L]
+RewriteRule  ^admin/roles/([0-9]+)/?$			admin_role.php?id=$1&%{QUERY_STRING}		[L]
+RewriteRule  ^admin/roles/([0-9]+)/delete/?$		admin_role_delete.php?id=$1&%{QUERY_STRING}		[L]
 
 # General pages
 
