@@ -28,13 +28,20 @@
 
 			$GLOBALS['cfg']['auth_roles']['staff'] = 1;
 		}
-
+		
 	}
 
 	########################################################################
 
 	function auth_has_role($role){
+		
+		### adding thing here for a super-user kinda deal...
 
+		if ($GLOBALS['cfg']['user']['id'] == 1 ){
+			$GLOBALS['cfg']['auth_roles']['staff'] = 1;
+		}
+		
+		
 		return !!$GLOBALS['cfg']['auth_roles'][$role];
 	}
 

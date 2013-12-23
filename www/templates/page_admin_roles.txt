@@ -1,0 +1,26 @@
+{assign var="page_title" value="Site Roles" nav_tab='roles'}
+{include file="inc_head.txt"}
+
+	<h1>Sitewide Roles</h1>
+
+	<div class="table-responsive">
+	<table class="table table-striped" >
+		<thead>
+			<td>Role ID</td>
+			<td>Title</td>
+			<td>Description</td>
+		</thead>
+		<tbody>
+  		{foreach from=$roles item=role}
+  			<tr>
+				<td>{$role.id}</td>
+				<td>{$role.title}</td>
+				<td>{$role.description}</td>
+			<tr>
+  		{/foreach}
+		</tbody>
+	</table>
+	</div>
+	
+	
+{include file="inc_foot.txt"}

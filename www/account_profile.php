@@ -31,6 +31,10 @@
 	}
 	
 	$profile = profile_get_by_username($GLOBALS['cfg']['user']['username']);
+
+	if ( !$profile['profile']['user_id'] ){
+		profile_create_empty_profile($GLOBALS['cfg']['user']['id']);
+	}
 	
 	#
 	# output

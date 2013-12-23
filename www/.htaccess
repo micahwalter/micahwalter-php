@@ -112,6 +112,12 @@ RewriteRule  ^account/profile$		account_profile.php		[L]
 RewriteRule  ^account/password$		account_password.php	[L]
 RewriteRule  ^account/delete$		account_delete.php	[L]
 
+# Admin stuff
+
+RewriteRule  ^admin$			admin.php		[L]
+RewriteRule  ^admin/users$			admin_users.php		[L]
+RewriteRule  ^admin/roles$			admin_roles.php		[L]
+
 # General pages
 
 RewriteRule ^about$			about.php 		[L,QSA]

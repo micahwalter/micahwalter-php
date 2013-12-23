@@ -107,6 +107,16 @@
 
 	#################################################################
 
+	function users_get_all(){
+
+		$rsp = db_fetch("SELECT * FROM users ORDER BY id DESC");
+		
+		### going to need pagination stuff?
+		return $rsp['rows'];
+	}
+
+	#################################################################
+
 	function users_get_by_id($id){
 
 		$user = db_single(db_fetch("SELECT * FROM users WHERE id=".intval($id)));

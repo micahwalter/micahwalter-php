@@ -223,6 +223,7 @@
 	#loadlib('versions');
 	loadlib('http');
 	loadlib('paginate');
+	loadlib('roles');
 
 	if (isset($GLOBALS['cfg']['autoload_libs']) && is_array($GLOBALS['cfg']['autoload_libs'])){
 		foreach ($GLOBALS['cfg']['autoload_libs'] as $lib){
