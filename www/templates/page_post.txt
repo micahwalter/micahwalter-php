@@ -1,0 +1,19 @@
+{assign var="page_title" value=$post.title nav_tab='post'}
+{include file="inc_head.txt"}
+
+	<div class="row">
+	    <div class="span12 centered-text">
+	        <h1>{ $post.title }</h1>
+			<p>by <a href="{$cfg.abs_root_url}@{$post.profile.username}">{ $post.profile.full_name }</a></p>
+			
+	    </div>
+	</div>
+	
+	<div class="col-md-6 col-md-offset-3">
+		<hr>
+		<p>{ $post.body|@nl2br }</p>
+	</div>
+	
+	
+	 			
+{include file="inc_foot.txt"}

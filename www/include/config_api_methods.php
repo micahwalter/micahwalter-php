@@ -47,6 +47,21 @@
 			
 		),
 
+		"posts.getInfo" => array(
+			"description" => "Return a post",
+			"documented" => 1,
+			"enabled" => 1,
+			"library" => "api_posts",
+            "parameters" => array(
+                    array(
+                            "name" => "id",
+                            "description" => "A valid post ID",
+                            "required" => 1
+                    )
+            )
+			
+		),
+		
 	), $GLOBALS['cfg']['api']['methods']);
 
 	########################################################################

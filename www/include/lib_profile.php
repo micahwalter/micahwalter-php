@@ -18,6 +18,24 @@
 		
 	}
 	
+	#################################################################
+
+	function profile_get_by_id($id){
+	
+		$user = users_get_by_id($id);
+		
+		$profile = array(
+			'user' => $user
+		);		
+			
+		$rsp = db_single(db_fetch("SELECT * FROM users_profile WHERE user_id=".intval($user['id'])));
+
+		$profile['profile'] = $rsp;
+		
+		return $profile;
+		
+	}
+
 	
 	#################################################################
 
