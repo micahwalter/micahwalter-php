@@ -149,6 +149,20 @@
 
 	#################################################################
 
+	function api_oauth2_access_tokens_get_user_by_token(&$token){
+
+		$enc_token = AddSlashes($token);
+
+		$sql = "SELECT user_id FROM OAuth2AccessTokens WHERE access_token='{$enc_token}'";
+
+		$rsp = db_fetch($sql);
+		$row = db_single($rsp);
+
+		return $row;
+	}
+
+	#################################################################
+
 	function api_oauth2_access_tokens_create(&$key, &$user, $perms, $ttl=0){
 
 		$id = dbtickets_create(64);

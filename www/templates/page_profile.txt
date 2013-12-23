@@ -10,6 +10,15 @@
 	<div class="col-sm-6 col-sm-offset-3">
 		<hr>
 		<p>{ $profile.profile.bio|@nl2br }</p>
+		<hr>
+	    <div class="span12 centered-text">
+	        <h2>Post Archive</h2>
+	    </div>
+		<ul>
+		{foreach from=$posts item=post}
+		<li><a href="{$cfg.abs_root_url}post/{$post.id}">{$post.title}</a></li>
+		{/foreach}
+		</ul>
 	</div>
 	 			
 {include file="inc_foot.txt"}

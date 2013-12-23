@@ -46,6 +46,14 @@
             )
 			
 		),
+		
+		"profile.getProfile" => array(
+			"description" => "Return your own user profile",
+			"documented" => 1,
+			"enabled" => 1,
+			"library" => "api_profile",			
+		),
+		
 
 		"posts.getInfo" => array(
 			"description" => "Return a post",
