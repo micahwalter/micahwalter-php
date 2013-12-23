@@ -8,7 +8,8 @@
 	#
 	# update?
 	#
-
+	$ok = 1;
+	
 	if (post_str('change')){
 		$full_name	= trim(post_str('full_name'));
 		$bio	= post_str('bio');

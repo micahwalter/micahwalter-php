@@ -7,6 +7,7 @@
 {if "api_documentation"|@features_is_enabled}
 
 <div class="api-sect">
+<h3>Overview</h3>
 <p><a href="{$cfg.abs_root_url}">{$cfg.site_name|escape}</a> provides a REST-ish style application programming interface (API) for developers to use in their products and services. API requests are made by passing one or more query parameters to:</p>
 
 <p class="api-link"><code>{$cfg.api_abs_root_url}{$cfg.api_endpoint}</code></p>

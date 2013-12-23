@@ -25,3 +25,23 @@
 		return $posts['rows'];
 	}
 	
+	#################################################################
+	
+	function posts_create_post(&$user, $post){
+	
+		$post['user_id'] = $user['id'];
+		
+		$hash = array();
+		foreach ($post as $k => $v){
+			$hash[$k] = AddSlashes($v);
+		}
+
+		$ret = db_insert('posts', $hash);
+		if (!$ret['ok']) return $ret;
+		
+		return array(
+			'ok'	=> 1,
+			'post'	=> $post,
+			'post_id' => $ret['insert_id']
+		);
+	}

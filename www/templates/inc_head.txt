@@ -45,6 +45,8 @@
 			
             <ul class="nav navbar-nav navbar-right">
 {if $cfg.user.id}
+			<li><a href="{$cfg.abs_root_url}post/new">New Post</a></li>
+			
             <li class="{if $nav_tab == 'account'} active{/if}">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello {$cfg.user.username|escape} <b class="caret"></b></a>
               <ul class="dropdown-menu">
