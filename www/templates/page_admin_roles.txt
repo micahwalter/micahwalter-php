@@ -9,6 +9,7 @@
 			<td>Role ID</td>
 			<td>Title</td>
 			<td>Description</td>
+			<td>Operations</td>
 		</thead>
 		<tbody>
   		{foreach from=$roles item=role}
@@ -16,11 +17,21 @@
 				<td>{$role.id}</td>
 				<td>{$role.title}</td>
 				<td>{$role.description}</td>
+				<td><a href="#">Edit role</a> | <a href="#">Delete role</a></td>
 			<tr>
   		{/foreach}
 		</tbody>
 	</table>
 	</div>
+	
+	<form action="{$cfg.abs_root_url}admin/roles" method="post" accept-encoding="UTF-8" class="form-inline" role="form">
+	  <input type="hidden" name="add" value="1" />
+	  <div class="form-group">
+	    <input type="title" class="form-control" id="role" name="role" placeholder="New role title">
+	  </div>
+	  
+	  <input type="submit" class="btn btn-default" value="Add Role" />
+	</form>
 	
 	
 {include file="inc_foot.txt"}

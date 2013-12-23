@@ -9,6 +9,23 @@
 		header("location: {$GLOBALS['cfg']['abs_root_url']}");
 		exit;
 	}
+	
+	#
+	# update?
+	#
+	$ok = 1;
+	
+	if (post_str('add')){
+		$role	= array(
+			'title' => trim(post_str('role'))
+		);
+				
+		$rsp = roles_create_role($role);
+
+		### error check this...
+
+	}
+	
 		
 	$roles = roles_get_all();
 	
