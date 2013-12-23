@@ -4,6 +4,16 @@
 	
 	#################################################################
 
+	function posts_get_all(){
+			
+		$rsp = db_fetch("SELECT * FROM posts ORDER BY id DESC");
+	
+		return $rsp['rows'];
+	
+	}
+	
+	#################################################################
+
 	function posts_get_by_id($id){
 
 		$post = db_single(db_fetch("SELECT * FROM posts WHERE id=".intval($id)));
@@ -45,3 +55,37 @@
 			'post_id' => $ret['insert_id']
 		);
 	}
+	
+	#################################################################
+
+	function posts_update_post(&$post_id, $update){
+
+		$hash = array();
+		foreach ($update as $k => $v){
+			$hash[$k] = AddSlashes($v);
+		}
+
+		$ret = db_update('posts', $hash, "id={$post_id}");
+
+		if (!$ret['ok']) return $ret;
+
+		return array(
+			'ok' => 1,
+		);
+		
+	
+	}
+	
+	#################################################################
+
+	function posts_delete_post($id){
+
+		$enc_id = AddSlashes($id);
+		$sql = "DELETE FROM posts WHERE id='{$enc_id}'";
+
+		$rsp = db_write($sql);
+		
+		return $rsp;
+	}
+	
+	

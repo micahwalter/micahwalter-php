@@ -1,0 +1,27 @@
+{assign var="page_title" value="All the posts" nav_tab='posts'}
+{include file="inc_head.txt"}
+
+	<h1>Posts</h1>
+
+	<div class="table-responsive">
+	<table class="table table-striped" >
+		<thead>
+			<td>Post ID</td>
+			<td>Author ID</td>
+			<td>Title</td>
+			<td>Operations</td>
+		</thead>
+		<tbody>
+  		{foreach from=$posts item=post}
+  			<tr>
+				<td>{$post.id}</td>
+				<td>{$post.user_id}</td>
+				<td>{$post.title}</td>
+				<td><a href="{$cfg.abs_root_url}admin/posts/{$post.id}">Edit post</a> | <a href="{$cfg.abs_root_url}admin/posts/{$post.id}/delete">Delete post</a></td>
+			<tr>
+  		{/foreach}
+		</tbody>
+	</table>
+	</div>	
+	
+{include file="inc_foot.txt"}

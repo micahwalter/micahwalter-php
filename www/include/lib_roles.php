@@ -35,8 +35,6 @@
 
 		if (!$ret['ok']) return $ret;
 
-		cache_unset("USER-{$user['id']}");
-
 		return array(
 			'ok' => 1,
 		);
