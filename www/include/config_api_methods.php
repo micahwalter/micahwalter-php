@@ -40,7 +40,7 @@
             "parameters" => array(
                     array(
                             "name" => "username",
-                            "description" => "A valid Micah Walter username",
+                            "description" => "A valid username",
                             "required" => 1
                     )
             )
