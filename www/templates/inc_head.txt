@@ -50,6 +50,7 @@
             <li class="{if $nav_tab == 'account'} active{/if}">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello {$cfg.user.username|escape} <b class="caret"></b></a>
               <ul class="dropdown-menu">
+				{if 'staff'|@auth_has_role }<li><a href="{$cfg.abs_root_url}admin">Admin</a></li>{/if}  
                 <li><a href="{$cfg.abs_root_url}account">Account</a></li>
 				<li><a href="{$cfg.abs_root_url}@{$cfg.user.username|escape}">Your Profile</a></li>
                 <li><a href="{$cfg.abs_root_url}signout">Logout</a></li>

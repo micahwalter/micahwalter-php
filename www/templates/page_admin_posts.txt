@@ -16,7 +16,7 @@
   			<tr>
 				<td>{$post.id}</td>
 				<td>{$post.user_id}</td>
-				<td>{$post.title}</td>
+				<td><a href="{$cfg.abs_root_url}post/{$post.id}">{$post.title}</a></td>
 				<td><a href="{$cfg.abs_root_url}admin/posts/{$post.id}">Edit post</a> | <a href="{$cfg.abs_root_url}admin/posts/{$post.id}/delete">Delete post</a></td>
 			<tr>
   		{/foreach}

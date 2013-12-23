@@ -1,0 +1,12 @@
+{assign var="page_title" value="Administration" nav_tab='admin'}
+{include file="inc_head.txt"}
+
+	<h1>You are the admin</h1>
+
+	<ul>
+		<li><a href="/admin/posts">Edit all the posts</a></li>
+		<li><a href="/admin/users">Edit all the users</a></li>
+		<li><a href="/admin/roles">Edit all the roles</a></li>
+	</ul>
+
+{include file="inc_foot.txt"}
