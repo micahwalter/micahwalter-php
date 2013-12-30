@@ -1,0 +1,39 @@
+{assign var="page_title" value="Update this user" nav_tab='users'}
+{include file="inc_head.txt"}
+
+
+	<h1>Update this user</h1>
+	
+	<div class="row">
+	<div class="col-md-6">
+	
+
+{if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
+	<form action="{$cfg.abs_root_url}admin/users/{$user_id}" method="post" accept-encoding="UTF-8" role="form">
+	<input type="hidden" name="change" value="1" />
+	<h3>Roles</h3>
+	
+	
+	{foreach from=$roles item=role}
+	<div class="control-group">
+	  <label class="checkbox" for="roles-{$role.id}">
+	    <input type="checkbox" name="roles[]" value="{$role.id}" id="roles-{$role.id}"{if $role.checked == 'yes'}checked{/if}>
+	    {$role.title}
+	  </label>
+	  </div>
+	{/foreach}	
+	
+
+	<!-- Button -->
+	<div class="control-group">
+	  <div class="controls">
+	    <input type="submit" class="btn btn-default" value="Update" />
+	  </div>
+	</div>
+
+	</form>  
+	
+	</div>
+	</div>
+	
+{include file="inc_foot.txt"}

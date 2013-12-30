@@ -9,7 +9,8 @@
 		return $role;
 	
 	}
-	
+
+
 	#################################################################
 
 	function roles_get_all(){
@@ -70,6 +71,11 @@
 
 		$rsp = db_write($sql);
 		
+		### We need to also delete any instances of this from the users_roles table ###
+		
+		$sql = "DELETE FROM users_roles WHERE role_id='{$enc_id}'";
+		$rsp = db_write($sql);
+				
 		return $rsp;
 	}
 

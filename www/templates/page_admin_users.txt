@@ -10,6 +10,7 @@
 			<th>User ID</th>
 			<th>Username</th>
 			<th>Email</th>
+			<th>Operations</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -18,6 +19,7 @@
 				<td>{$user.id}</td>
 				<td>{$user.username}</td>
 				<td>{$user.email}</td>
+				<td><a href="{$cfg.abs_root_url}admin/users/{$user.id}">Edit user</a> | <a href="{$cfg.abs_root_url}admin/users/{$user.id}/delete">Delete user</a></td>
 			</tr>
   		{/foreach}
 		</tbody>
