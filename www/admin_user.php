@@ -24,6 +24,14 @@
 		$roles_update = $_POST['roles'];
 		
 		
+		### needs error checking...
+		
+		users_roles_update_users_roles($id, $roles_update);
+
+		header("location: {$GLOBALS['cfg']['abs_root_url']}admin/users");
+		exit;
+		
+		
 	}
 	
 	

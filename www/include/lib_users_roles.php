@@ -29,3 +29,77 @@
 			return FALSE;
 
 	}
+	
+	#################################################################
+
+	function users_roles_update_users_roles($user_id, $update){
+		
+		### first delete all the users roles, because, stupid...
+		$rsp = users_roles_delete_all_users_role($user_id);
+		
+		### this function creates or deletes ALL the roles for a given user
+		if (!isset($update))
+			return;
+		
+		foreach ($update as $role){
+			users_roles_create_users_role($user_id, $role);
+		} 	 
+		
+	}
+	
+	
+	#################################################################
+
+	function users_roles_create_users_role($user_id, $role_id){
+		
+		$role['user_id'] = $user_id;
+		$role['role_id'] = $role_id;
+		
+		$hash = array();
+		foreach ($role as $k => $v){
+			$hash[$k] = AddSlashes($v);
+		}
+
+		$ret = db_insert('users_roles', $hash);
+		
+		if (!$ret['ok']) return $ret;
+
+		$role['id'] = $ret['insert_id'];
+		
+		return array(
+			'ok'	=> 1,
+			'role'	=> $role,
+		);
+		
+		
+				
+	}
+
+	#################################################################
+
+	function users_roles_delete_users_role($user_id, $role_id){
+	
+		$enc_user_id = AddSlashes($user_id);
+		$enc_role_id = AddSlashes($role_id);
+		
+		$sql = "DELETE FROM users_roles WHERE user_id='{$enc_user_id}' AND role_id='{$enc_role_id}'";
+
+		$rsp = db_write($sql);
+		
+		return $rsp;
+		
+	}
+
+	#################################################################
+
+	function users_roles_delete_all_users_role($user_id){
+	
+		$enc_user_id = AddSlashes($user_id);
+		
+		$sql = "DELETE FROM users_roles WHERE user_id='{$enc_user_id}'";
+
+		$rsp = db_write($sql);
+		
+		return $rsp;
+		
+	}
