@@ -10,7 +10,7 @@
 		header("location: {$GLOBALS['cfg']['abs_root_url']}");
 		exit;
 	}
-
+	
 	$id = get_int64('id');
 	
 	#

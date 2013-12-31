@@ -13,6 +13,18 @@
 
 	#################################################################
 
+	function roles_get_by_title($role_title){
+		
+		$enc_title = AddSlashes($role_title);
+		
+		$role = db_single(db_fetch("SELECT * FROM roles WHERE title='{$enc_title}'"));
+
+		return $role;
+	
+	}
+
+	#################################################################
+
 	function roles_get_all(){
 			
 		$rsp = db_fetch("SELECT * FROM roles ORDER BY id DESC");

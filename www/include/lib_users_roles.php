@@ -29,6 +29,21 @@
 			return FALSE;
 
 	}
+
+	#################################################################
+
+	function users_roles_user_has_role_by_name($user_id, $role_name){
+
+		$role = roles_get_by_title($role_name);
+
+		$rsp = db_single(db_fetch("SELECT * FROM users_roles WHERE user_id=" . intval($user_id) . " AND role_id=" . intval($role['id'])));
+	
+		if ($rsp)
+			return TRUE;
+		else
+			return FALSE;
+
+	}
 	
 	#################################################################
 
