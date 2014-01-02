@@ -2,5 +2,5 @@
 {include file='inc_head.txt' nav_tab='home'}
 
     <h1>Home!</h1>
-
+	
 {include file='inc_foot.txt'}

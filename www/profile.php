@@ -2,6 +2,7 @@
 	include("include/init.php");
 	loadlib("profile");
 	loadlib("posts");
+	loadlib('gravatar');
 
 	$user_name = get_str("user_name");
 
@@ -20,6 +21,10 @@
 	#
 	# output
 	#
+
+	$grav = get_gravatar($profile['user']['email']);
+	
+	$smarty->assign('gravatar', $grav);
 	
 	$smarty->assign('posts', $posts);
 	$smarty->assign('profile', $profile);
