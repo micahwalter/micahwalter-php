@@ -31,6 +31,7 @@ DROP TABLE IF EXISTS `TwitterUsers`;
 CREATE TABLE `TwitterUsers` (
   `user_id` int(11) unsigned NOT NULL,
   `twitter_id` varchar(20) NOT NULL,
+  `screen_name` varchar(20) NOT NULL,
   `oauth_token` char(64) NOT NULL,
   `oauth_secret` char(64) NOT NULL,
   PRIMARY KEY (`user_id`),

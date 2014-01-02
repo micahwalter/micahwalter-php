@@ -8,8 +8,17 @@
 	<ul>
 		<li><a href="/account/profile">Update your profile</a></li>
 		<li><a href="/account/password">Change your password</a></li>
-		<li><a href="/account/twitter">Connect your Twitter account</a></li>
 		<li><a href="/account/delete">Delete your account</a></li>
 	</ul>
+	
+	<h1>Connected accounts</h1>
+	
+	<h3>Twitter</h3>
+	<ul>{foreach from=$twitter_accounts item=account}
+		<li>{$account.screen_name} -<a href="/account/twitter/{$account.screen_name}/configure"> Configure</a></li>
+	 {/foreach}
+		<li><a href="/account/twitter/add">Add a Twitter account</a></li>
+		
+	</ul>	
 
 {include file="inc_foot.txt"}

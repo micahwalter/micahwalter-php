@@ -91,10 +91,10 @@
 		$sql = "SELECT * FROM TwitterUsers WHERE user_id='{$enc_id}'";
 
 		$rsp = db_fetch($sql);
-		$user = db_single($rsp);
+		#$user = db_single($rsp);
 
 		# cache_set($cache_key, $user, "cache locally");
-		return $user;
+		return $rsp['rows'];
 	}
 
 	#################################################################

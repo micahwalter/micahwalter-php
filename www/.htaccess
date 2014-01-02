@@ -112,6 +112,11 @@ RewriteRule  ^account/profile$		account_profile.php		[L]
 RewriteRule  ^account/password$		account_password.php	[L]
 RewriteRule  ^account/delete$		account_delete.php	[L]
 
+# Connected Accounts
+
+RewriteRule  ^account/twitter/add$		auth_twitter_oauth.php	[L]
+RewriteRule  ^auth/?$			/auth_twitter_callback_oauth.php?%{QUERY_STRING} [L]
+
 # Admin stuff
 
 RewriteRule  ^admin$			admin.php		[L]
