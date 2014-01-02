@@ -48,7 +48,7 @@
 			<li><a href="{$cfg.abs_root_url}post/new">New Post</a></li>
 			
             <li class="{if $nav_tab == 'account'} active{/if}">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello {$cfg.user.username|escape} <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{$cfg.user.email|@get_gravatar}" class="img-rounded" height="25px" /> {$cfg.user.username|escape}<b class="caret"></b></a>
               <ul class="dropdown-menu">
 				{if 'staff'|@auth_has_role }<li><a href="{$cfg.abs_root_url}admin">Admin</a></li>{/if}  
                 <li><a href="{$cfg.abs_root_url}account">Account</a></li>
