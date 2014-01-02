@@ -9,6 +9,9 @@
 	
 
 {if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
+
+	<img src="{$user.email|@get_gravatar}" />
+	<hr>
 	<form action="{$cfg.abs_root_url}admin/users/{$user_id}" method="post" accept-encoding="UTF-8" role="form">
 	<input type="hidden" name="change" value="1" />
 	<h3>Roles</h3>

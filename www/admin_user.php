@@ -34,6 +34,7 @@
 		
 	}
 	
+	$user = users_get_by_id($id);
 	
 	$roles = roles_get_all();
 
@@ -52,6 +53,7 @@
 	# output
 	#
 
+	$smarty->assign('user', $user);
 	$smarty->assign('user_id', $id);
 	$smarty->assign('roles', $roles_status);
 	$smarty->display("page_admin_user.txt");
