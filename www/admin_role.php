@@ -40,6 +40,11 @@
 	
 	$role = roles_get_by_id($id);
 	
+	if (!$role){
+		error_404();
+	}
+	
+	
 	#
 	# output
 	#

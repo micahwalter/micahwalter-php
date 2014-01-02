@@ -43,6 +43,11 @@
 	
 	$post = posts_get_by_id($id);
 
+	### fix this??? 
+	if (! isset($post['id']) ){
+		error_404();
+	}
+	
 	#
 	# output
 	#

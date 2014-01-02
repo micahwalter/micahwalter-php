@@ -9,8 +9,9 @@
     }
         
     $post = posts_get_by_id($id);
-
-    if (! $post){
+	
+	### fix this stuff
+    if (! $post['id']){
             error_404();
     }
 		

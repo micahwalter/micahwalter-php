@@ -36,6 +36,10 @@
 	
 	$user = users_get_by_id($id);
 	
+	if (!$user){
+		error_404();
+	}
+	
 	$roles = roles_get_all();
 
 	$roles_status = array();

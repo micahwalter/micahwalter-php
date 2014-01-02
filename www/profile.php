@@ -12,7 +12,7 @@
         
     $profile = profile_get_by_username($user_name);
 
-    if (! $profile){
+    if (! $profile['user']){
             error_404();
     }
 
