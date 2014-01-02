@@ -8,6 +8,7 @@
 	<ul>
 		<li><a href="/account/profile">Update your profile</a></li>
 		<li><a href="/account/password">Change your password</a></li>
+		<li><a href="/account/twitter">Connect your Twitter account</a></li>
 		<li><a href="/account/delete">Delete your account</a></li>
 	</ul>
 
