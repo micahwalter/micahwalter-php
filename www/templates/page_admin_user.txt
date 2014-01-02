@@ -1,6 +1,8 @@
-{assign var="page_title" value="Update this user" nav_tab='users'}
+{assign var="page_title" value="Admin | Users" nav_tab='users'}
 {include file="inc_head.txt"}
 
+{capture assign="title"}Admin area{/capture}
+{include file="inc_admin_header.txt" title=$title}
 
 	<h1>Update this user</h1>
 	

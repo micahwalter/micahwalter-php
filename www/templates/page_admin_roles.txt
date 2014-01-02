@@ -1,5 +1,8 @@
-{assign var="page_title" value="Site Roles" nav_tab='roles'}
+{assign var="page_title" value="Admin | Roles" nav_tab='roles'}
 {include file="inc_head.txt"}
+
+{capture assign="title"}Admin area{/capture}
+{include file="inc_admin_header.txt" title=$title}
 
 	<h1>Sitewide Roles</h1>
 

@@ -1,0 +1,11 @@
+<div id="admin-header">
+<h1>{$title|escape}</h1>
+
+<ul class="nav nav-tabs">
+  <li {if $page_title == 'Admin'} class="active"{/if}><a href="{$cfg.abs_root_url}admin/">Dashboard</a></li>
+  <li {if $page_title == 'Admin | Users'} class="active"{/if}><a href="{$cfg.abs_root_url}admin/users/">Users</a></li>
+  <li {if $page_title == 'Admin | Roles'} class="active"{/if}><a href="{$cfg.abs_root_url}admin/roles/">Roles</a></li>
+  <li {if $page_title == 'Admin | Posts'} class="active"{/if}><a href="{$cfg.abs_root_url}admin/posts/">Posts</a></li>
+</ul>
+
+</div>

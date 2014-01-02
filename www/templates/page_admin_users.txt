@@ -1,5 +1,8 @@
-{assign var="page_title" value="Users" nav_tab='users'}
+{assign var="page_title" value="Admin | Users" nav_tab='users'}
 {include file="inc_head.txt"}
+
+{capture assign="title"}Admin area{/capture}
+{include file="inc_admin_header.txt" title=$title}
 
 	<h1>Users</h1>
 
@@ -21,7 +24,7 @@
 				<td>{$user.id}</td>
 				<td>{$user.username}</td>
 				<td>{$user.email}</td>
-				<td><a href="{$cfg.abs_root_url}admin/users/{$user.id}">Edit user</a> | <a href="{$cfg.abs_root_url}admin/users/{$user.id}/delete">Delete user</a></td>
+				<td><a href="{$cfg.abs_root_url}@{$user.username}">View profile</a> | <a href="{$cfg.abs_root_url}admin/users/{$user.id}">Edit user</a> | <a href="{$cfg.abs_root_url}admin/users/{$user.id}/delete">Delete user</a></td>
 			</tr>
   		{/foreach}
 		</tbody>

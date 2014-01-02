@@ -26,6 +26,17 @@ CREATE TABLE `users_password_reset` (
   KEY `by_timestamp` (`created`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `TwitterUsers`;
+
+CREATE TABLE `TwitterUsers` (
+  `user_id` int(11) unsigned NOT NULL,
+  `twitter_id` varchar(20) NOT NULL,
+  `oauth_token` char(64) NOT NULL,
+  `oauth_secret` char(64) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `by_twitterid` (`twitter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `users_profile`;
 
 CREATE TABLE `users_profile` (

@@ -117,6 +117,7 @@ RewriteRule  ^account/delete$		account_delete.php	[L]
 RewriteRule  ^admin$			admin.php		[L]
 RewriteRule  ^admin/users$			admin_users.php		[L]
 RewriteRule  ^admin/users/([0-9]+)/?$			admin_user.php?id=$1&%{QUERY_STRING}		[L]
+RewriteRule  ^admin/users/([0-9]+)/delete/?$		admin_user_delete.php?id=$1&%{QUERY_STRING}		[L]
 
 RewriteRule  ^admin/posts$			admin_posts.php		[L]
 RewriteRule  ^admin/posts/([0-9]+)/?$			admin_post.php?id=$1&%{QUERY_STRING}		[L]

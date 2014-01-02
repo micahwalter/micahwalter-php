@@ -1,5 +1,8 @@
-{assign var="page_title" value="All the posts" nav_tab='posts'}
+{assign var="page_title" value="Admin | Posts" nav_tab='posts'}
 {include file="inc_head.txt"}
+
+{capture assign="title"}Admin area{/capture}
+{include file="inc_admin_header.txt" title=$title}
 
 	<h1>Posts</h1>
 

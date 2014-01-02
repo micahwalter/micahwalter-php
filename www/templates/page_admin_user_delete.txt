@@ -1,10 +1,10 @@
-{assign var="page_title" value="Admin | Roles" nav_tab='roles'}
+{assign var="page_title" value="Admin | Users" nav_tab='roles'}
 {include file="inc_head.txt"}
 
 {capture assign="title"}Admin area{/capture}
 {include file="inc_admin_header.txt" title=$title}
 
-	<h1>Delete this role??</h1>
+	<h1>Delete this user??</h1>
 	
 	<h3>{ $role.title}</h3>
 	
@@ -14,11 +14,11 @@
 
 {if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
 
-<form action="{$cfg.abs_root_url}admin/roles/{$role.id}/delete" method="post" accept-encoding="UTF-8" role="form">
+<form action="{$cfg.abs_root_url}admin/users/{$user.id}/delete" method="post" accept-encoding="UTF-8" role="form">
 	<input type="hidden" name="delete" value="1" />
 	
 	<div class="form-group">
-		<input type="submit" class="btn btn-danger" value="DELETE ROLE" />
+		<input type="submit" class="btn btn-danger" value="DELETE USER" />
 
 	</div>
 </form>
