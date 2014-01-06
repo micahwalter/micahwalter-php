@@ -99,4 +99,18 @@
 
 	#################################################################
 
+	function twitter_users_get_by_screen_name($screen_name){
+
+		$enc_sn = AddSlashes($screen_name);
+
+		$sql = "SELECT * FROM TwitterUsers WHERE screen_name='{$enc_sn}'";
+
+		$rsp = db_fetch($sql);
+		$user = db_single($rsp);
+
+		return $user;
+	}
+
+	#################################################################
+
 ?>

@@ -1,0 +1,7 @@
+{assign var="page_title" value="Account | Twitter" nav_tab='account'}
+{include file="inc_head.txt"}
+
+
+	<h1>Twitter configuration for {$twitter.screen_name}</h1>
+	
+{include file="inc_foot.txt"}

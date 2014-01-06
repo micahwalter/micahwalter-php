@@ -9,7 +9,7 @@
 
 	#################################################################
 
-	$GLOBALS['cfg']['twitter_api_endpoint'] = '';
+	$GLOBALS['cfg']['twitter_api_endpoint'] = 'https://api.twitter.com/1.1/';
 	$GLOBALS['cfg']['twitter_oauth_endpoint'] = 'https://api.twitter.com/oauth/';
 
 	#################################################################
@@ -82,6 +82,26 @@
 			'data' => $data,
 		);
 	}
+	
+    #################################################################
+    
+    function twitter_oauth_api_get_call(&$args, &$user_keys){
+                            
+            $keys = array(
+                    'oauth_key' => $GLOBALS['cfg']['twitter_oauth_key'],
+                    'oauth_secret' => $GLOBALS['cfg']['twitter_oauth_secret'],
+                    'user_key' => $user_keys['oauth_token'],
+                    'user_secret' => $user_keys['oauth_secret'],        
+            );
+            
+            $url = $GLOBALS['cfg']['twitter_api_endpoint'] . $args['method'] . '.json';
+
+            $url = oauth_sign_get($keys, $url, $args, 'GET');
+            $rsp = http_get($url);
+                                            
+            return $rsp;
+            
+    }
 
 	#################################################################
 

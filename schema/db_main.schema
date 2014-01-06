@@ -34,8 +34,25 @@ CREATE TABLE `TwitterUsers` (
   `screen_name` varchar(20) NOT NULL,
   `oauth_token` char(64) NOT NULL,
   `oauth_secret` char(64) NOT NULL,
-  PRIMARY KEY (`user_id`),
+  PRIMARY KEY (`twitter_id`),
   UNIQUE KEY `by_twitterid` (`twitter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `TwitterStatus`;
+
+CREATE TABLE `TwitterStatus` (
+  `id` bigint(64) UNSIGNED NOT NULL,
+  `twitter_id` varchar(20) NOT NULL,
+  `in_reply_to_status_id` bigint(64) UNSIGNED NOT NULL,
+  `in_reply_to_user_id` bigint(64) UNSIGNED NOT NULL,
+  `retweeted_status_id` bigint(64) UNSIGNED NOT NULL,
+  `retweeted_status_user_id` bigint(64) UNSIGNED NOT NULL,
+  `text` text NOT NULL,
+  `created_at` varchar(30),
+  `source` varchar(255),
+  `expanded_urls` varchar(255),
+  PRIMARY KEY(`id`),
+  UNIQUE KEY `by_id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `users_profile`;
