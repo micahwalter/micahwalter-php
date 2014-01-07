@@ -1,0 +1,18 @@
+{assign var="page_title" value=$tweet.id nav_tab='tweet'}
+{include file="inc_head.txt"}
+
+	<div class="row">
+	    <div class="span12 centered-text">
+	        <h1>{ $tweet.id }</h1>
+			<p>{ $tweet.text|@escape }</p>			
+	    </div>
+	</div>
+	
+	<div class="col-md-6 col-md-offset-3">
+		<hr>
+		<p>{ $tweet|@dumper }</p>
+	</div>
+	
+	
+	 			
+{include file="inc_foot.txt"}
