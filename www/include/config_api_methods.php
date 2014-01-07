@@ -69,6 +69,21 @@
             )
 			
 		),
+
+		"tweets.getInfo" => array(
+			"description" => "Return a tweet",
+			"documented" => 1,
+			"enabled" => 1,
+			"library" => "api_tweets",
+            "parameters" => array(
+                    array(
+                            "name" => "id",
+                            "description" => "A valid tweet ID",
+                            "required" => 1
+                    )
+            )
+			
+		),
 		
 	), $GLOBALS['cfg']['api']['methods']);
 
