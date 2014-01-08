@@ -79,10 +79,17 @@
                     array(
                             "name" => "id",
                             "description" => "A valid tweet ID",
-                            "required" => 1
+                            "required" => 0
+                    ),
+                    array(
+                            "name" => "twitter_id",
+                            "description" => "The tweet's original ID",
+                            "required" => 0
                     )
-            )
-			
+            ),
+            "notes" => array(
+                    "You MUST pass either a valid tweet ID or original twitter ID."
+            )	
 		),
 		
 	), $GLOBALS['cfg']['api']['methods']);

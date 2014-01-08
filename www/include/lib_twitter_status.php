@@ -16,13 +16,7 @@
 			return null;
 		}
 
-		$cache_key = "twitter_status_{$status['twitter_id']}";
-		cache_set($cache_key, $status, "cache locally");
-
-		$cache_key = "twitter_status_{$status['id']}";
-		cache_set($cache_key, $status, "cache locally");
-
-		return $status;
+		return $rsp;
 	}
 
 	#################################################################
@@ -44,11 +38,6 @@
 
 			$twitter_status = array_merge($twitter_status, $update);
 
-			$cache_key = "twitter_status_{$twitter_status['twitter_id']}";
-			cache_unset($cache_key);
-
-			$cache_key = "twitter_status_{$twitter_status['id']}";
-			cache_unset($cache_key);
 		}
 
 		return $rsp;
@@ -58,20 +47,23 @@
 
 	function twitter_status_get_by_id($id){
 
-		$cache_key = "twitter_status_{$id}";
-		$cache = cache_get($cache_key);
-
-		if ($cache['ok']){
-			#return $cache['data'];
-		}
-
 		$enc_id = AddSlashes($id);
 
 		$sql = "SELECT * FROM TwitterStatus WHERE id='{$enc_id}'";
 		$rsp = db_fetch($sql);
 		$status = db_single($rsp);
 
-		#cache_set($cache_key, $status, "cache locally");
+		return $status;
+	}
+
+	#################################################################
+
+	function twitter_status_get_by_twitter_id($twitter_id){
+
+		$sql = "SELECT * FROM TwitterStatus WHERE twitter_id='{$twitter_id}'";
+		$rsp = db_fetch($sql);
+		$status = db_single($rsp);
+
 		return $status;
 	}
 		
@@ -115,11 +107,11 @@
 
 	#################################################################
 	
-	function twitter_status_get_users_latest_status($id, $more=array()) {
+	function twitter_status_get_users_latest_status($twitter_user_id) {
 		
-		$enc_id = AddSlashes($id);
+		$enc_twitter_user_id = AddSlashes($twitter_user_id);
 				
-		$sql = "SELECT * FROM TwitterStatus WHERE twitter_id='{$enc_id}' ORDER BY id ASC";
+		$sql = "SELECT * FROM TwitterStatus WHERE twitter_user_id='{$enc_twitter_user_id}' ORDER BY twitter_id DESC";
 		$rsp = db_fetch($sql);
 		$status = db_single($rsp);
 		

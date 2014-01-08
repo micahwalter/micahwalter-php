@@ -8,7 +8,13 @@
 		
 		$id = request_int64("id");
 		
-		$tweet = twitter_status_get_by_id($id);
+		if ( !$id ){
+			$twitter_id = request_int64("twitter_id");
+			$tweet = twitter_status_get_by_twitter_id($twitter_id);
+		} else {
+			$tweet = twitter_status_get_by_id($id);
+		}
+		
 				
 		$out = array(
 		    'tweet' => $tweet
