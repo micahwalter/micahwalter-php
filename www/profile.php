@@ -2,7 +2,8 @@
 	include("include/init.php");
 	loadlib("profile");
 	loadlib("posts");
-	loadlib('gravatar');
+	loadlib("gravatar");
+	loadlib("twitter_status");
 
 	$user_name = get_str("user_name");
 
@@ -17,6 +18,8 @@
     }
 
 	$posts = posts_get_by_user_id($profile['profile']['user_id']);
+	
+	$tweets = twitter_status_get_users_recent_tweets($profile['profile']['user_id']);
 		
 	#
 	# output

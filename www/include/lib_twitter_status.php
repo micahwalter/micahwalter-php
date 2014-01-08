@@ -68,25 +68,6 @@
 	}
 		
 	#################################################################
-
-	function twitter_status_get_from_url() {
-		
-		if ($id = get_int64("id")){
-			$status = twitter_status_get_by_id($id);
-		}
-				
-		else {}
-
-		if (! $status){
-			error_404();
-		}
-
-		
-
-		return $status;	
-	}	
-
-	#################################################################
 	
 	function twitter_status_get_statuses($more=array()) {
 				
@@ -127,6 +108,10 @@
 		$status = db_single($rsp);
 		
 		return $status;
+	}
+	
+	function twitter_status_get_users_recent_tweets(){
+		
 	}
 	
 
