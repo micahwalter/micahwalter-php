@@ -1,16 +1,31 @@
-{assign var="page_title" value="Admin | Users" nav_tab='roles'}
-{include file="inc_head.txt"}
+{assign var="page_title" value="Admin | Users" nav_tab='users'}
+{include file="inc_admin_header.txt" nav_tab='users'}
 
-{capture assign="title"}Admin area{/capture}
-{include file="inc_admin_header.txt" title=$title}
+<div class="main-content">
+  <div class="container">
+    <div class="row">
 
-	<h1>Delete this user??</h1>
-	
-	<h3>{ $role.title}</h3>
-	
-	<div class="row">
-	<div class="col-md-6">
-	
+      <div class="area-top clearfix">
+        <div class="pull-left header">
+          <h3 class="title">
+            <i class="icon-user"></i>
+            Users
+          </h3>
+          <h5>
+            <span>
+             {$user.username} 
+            </span>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container padded">
+    <div class="row">
+
+	<h3>Delete this user??</h3>		
 
 {if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
 
@@ -19,11 +34,11 @@
 	
 	<div class="form-group">
 		<input type="submit" class="btn btn-danger" value="DELETE USER" />
-
+		<a href="{$cfg.abs_root_url}admin/users" type="button" class="btn btn-default">Cancel</a>	  
 	</div>
 </form>
 
 	</div>
 	</div>
 	
-{include file="inc_foot.txt"}
+{include file="inc_admin_footer.txt"}

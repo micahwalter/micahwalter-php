@@ -109,7 +109,7 @@
 
 	function users_get_all(){
 
-		$rsp = db_fetch("SELECT * FROM users ORDER BY id DESC");
+		$rsp = db_fetch("SELECT * FROM users WHERE deleted=0 ORDER BY id DESC");
 		
 		### going to need pagination stuff?
 		return $rsp['rows'];

@@ -1,10 +1,29 @@
 {assign var="page_title" value="Admin | Posts" nav_tab='posts'}
-{include file="inc_head.txt"}
+{include file="inc_admin_header.txt" nav_tab='posts'}
 
-{capture assign="title"}Admin area{/capture}
-{include file="inc_admin_header.txt" title=$title}
+<div class="main-content">
+  <div class="container">
+    <div class="row">
 
-	<h1>Posts</h1>
+      <div class="area-top clearfix">
+        <div class="pull-left header">
+          <h3 class="title">
+            <i class="icon-edit"></i>
+            Posts
+          </h3>
+          <h5>
+            <span>
+              All the posts we got
+            </span>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="container padded">
+    <div class="row">
 
 	<div class="table-responsive">
 	<table class="table table-striped" >
@@ -27,4 +46,7 @@
 	</table>
 	</div>	
 	
-{include file="inc_foot.txt"}
+	</div>
+	</div>
+	
+{include file="inc_admin_footer.txt"}

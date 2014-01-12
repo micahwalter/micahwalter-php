@@ -226,6 +226,7 @@
 	
 	loadlib('gravatar');
 	loadlib('roles');
+	loadlib('twitter_status');
 
 	if (isset($GLOBALS['cfg']['autoload_libs']) && is_array($GLOBALS['cfg']['autoload_libs'])){
 		foreach ($GLOBALS['cfg']['autoload_libs'] as $lib){

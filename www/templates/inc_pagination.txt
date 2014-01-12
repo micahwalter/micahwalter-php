@@ -1,9 +1,9 @@
 {if $pagination.page_count > 1}
 <div id="pagination" class="row">
 {if $cfg.pagination_style == "pretty"}
-	{include file="inc_pagination_pretty.txt"}
+        {include file="inc_pagination_pretty.txt"}
 {else}
-	{include file="inc_pagination_plain.txt"}
+        {include file="inc_pagination_plain.txt"}
 {/if}
 </div>
 

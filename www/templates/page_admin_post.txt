@@ -1,13 +1,29 @@
-{assign var="page_title" value="Admin | Posts" nav_tab='roles'}
-{include file="inc_head.txt"}
+{assign var="page_title" value="Admin | Posts" nav_tab='posts'}
+{include file="inc_admin_header.txt" nav_tab='posts'}
 
-{capture assign="title"}Admin area{/capture}
-{include file="inc_admin_header.txt" title=$title}
+<div class="main-content">
+  <div class="container">
+    <div class="row">
 
-	<h1>Update this post</h1>
-	
-	<div class="row">
-	<div class="col-md-6">
+      <div class="area-top clearfix">
+        <div class="pull-left header">
+          <h3 class="title">
+            <i class="icon-edit"></i>
+            Posts
+          </h3>
+          <h5>
+            <span>
+              {$post.title}
+            </span>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="container padded">
+    <div class="row">
 	
 
 {if $error_fail}		<p class="alert alert-error">Unknown failure :(</p>{/if}
@@ -42,4 +58,4 @@
 	</div>
 	</div>
 	
-{include file="inc_foot.txt"}
+{include file="inc_admin_footer.txt"}

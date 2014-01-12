@@ -71,7 +71,7 @@
 	
 	function twitter_status_get_statuses($more=array()) {
 				
-		$sql = "SELECT * FROM TwitterStatus ORDER BY id DESC";
+		$sql = "SELECT * FROM TwitterStatus ORDER BY twitter_id DESC";
 		return db_fetch_paginated($sql, $more);
 	}
 
@@ -85,6 +85,17 @@
 		
 		return $status;
 	}
+	
+	#################################################################
+	
+	function twitter_status_get_status_count() {
+				
+		$sql = "SELECT count(*) FROM TwitterStatus ";
+		$rsp = db_fetch($sql);
+		$count = db_single($rsp);
+		return $count['count(*)'];
+	}
+	
 
 	#################################################################
 	

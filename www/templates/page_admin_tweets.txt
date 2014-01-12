@@ -1,0 +1,64 @@
+{assign var="page_title" value="Admin | Tweets" nav_tab='tweets'}
+{include file="inc_admin_header.txt" nav_tab='tweets'}
+
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+
+      <div class="area-top clearfix">
+        <div class="pull-left header">
+          <h3 class="title">
+            <i class="icon-twitter"></i>
+            Tweets
+          </h3>
+          <h5>
+            <span>
+              All the tweets we got
+            </span>
+          </h5>
+        </div>
+
+        <ul class="list-inline pull-right sparkline-box">
+
+          <li class="sparkline-row">
+		  	
+            <h4 class="blue"><span>Tweets</span>{$count|@twitter_status_get_status_count}</h4>
+          </li>
+
+        </ul>
+		
+      </div>
+    </div>
+  </div>
+  
+  <div class="container padded">
+    <div class="row">
+
+	<div class="table-responsive">
+	<table class="table table-striped" >
+		<thead>
+			<td>ID</td>
+			<td>Tweet ID</td>
+			<td>Author ID</td>
+			<td>Tweet</td>
+		</thead>
+		<tbody>
+  		{foreach from=$tweets item=tweet}
+  			<tr>
+				<td><a href="{$cfg.abs_root_url}tweet/{$tweet.id}">{$tweet.id}</a></td>
+				<td>{$tweet.twitter_id}</td>
+				<td>{$tweet.twitter_user_id}</td>
+				<td><a href="{$cfg.abs_root_url}tweet/{$tweet.id}">{$tweet.text}</a></td>
+				
+			<tr>
+  		{/foreach}
+		</tbody>
+	</table>
+	</div>	
+	<div class="text-center">
+	{include file="inc_pagination.txt"} 
+	</div>
+	</div>
+	</div>
+	
+{include file="inc_admin_footer.txt"}
