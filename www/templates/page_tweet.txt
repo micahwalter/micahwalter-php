@@ -3,14 +3,34 @@
 
 	<div class="row">
 	    <div class="span12 centered-text">
-	        <h1>{ $tweet.twitter_id }</h1>
-			<p>{ $tweet.text|@escape }</p>
+	        <h3>{ $tweet.text|@escape }</h3>
+			<p>Original tweet: <a href="http://twitter.com/{$tweet.twitter_user_id}/status/{$tweet.twitter_id }">{ $tweet.twitter_id }</a></p>
+			{if $tweet.in_reply_to_status_id != 0}<p>In reply to: <a href="http://twitter.com/{$tweet.in_reply_to_screen_name}/status/{$tweet.in_reply_to_status_id}">{$tweet.in_reply_to_screen_name}</a> </p>{/if}
+			<p>Created at: {$tweet.created_at|escape}</p>
+			<p>Source: {$tweet.source}</p>
 	    </div>
 	</div>
 	
-	<div class="col-md-6 col-md-offset-3">
-		<hr>
-		<p>{ $tweet|@dumper }</p>
-	</div>
+	{if $tweet.latitude && $tweet.longitude != 0}
+	<div class="col-md-6 col-md-offset-3"><div id="map" class="map" style="height: 180px;"></div></div>
+	{/if}
+	
+	
+	
+	
+	<script>
+
+		var map = L.map('map').setView([{$tweet.latitude}, {$tweet.longitude}], 16);
+	{literal}	
+		L.tileLayer('https://ssl_tiles.cloudmade.com/2ba6f5e2548f41589d783ac97e57b387/44094/256/{z}/{x}/{y}.png', {
+		    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+		    maxZoom: 18
+		}).addTo(map);
+	{/literal}	
+		var marker = L.marker([{$tweet.latitude}, {$tweet.longitude}]).addTo(map);
+	
+	</script>
+	
+	
 	 			
 {include file="inc_foot.txt"}

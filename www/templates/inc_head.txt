@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="{$cfg.abs_root_url}css/bootstrap.css" rel="stylesheet">
     <link href="{$cfg.abs_root_url}css/main.css" rel="stylesheet">
+	
+     <link rel="stylesheet" href="{$cfg.abs_root_url}css/leaflet.css" />
+	 <script src="{$cfg.abs_root_url}js/leaflet.js"></script>   
     
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="{$cfg.abs_root_url}js/ie8-responsive-file-warning.js"></script><![endif]-->
