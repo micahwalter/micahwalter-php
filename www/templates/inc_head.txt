@@ -27,47 +27,6 @@
 
   <body>
 	  
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{$cfg.abs_root_url}">{$cfg.site_name|escape}</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li {if $nav_tab == 'about'} class="active"{/if}><a href="{$cfg.abs_root_url}about">About</a></li>
-              <li {if $nav_tab == 'contact'} class="active"{/if}><a href="{$cfg.abs_root_url}contact">Contact</a></li>
-            </ul>
-			
-            <ul class="nav navbar-nav navbar-right">
-{if $cfg.user.id}
-			<li><a href="{$cfg.abs_root_url}post/new">New Post</a></li>
-			
-            <li class="{if $nav_tab == 'account'} active{/if}">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{$cfg.user.email|@get_gravatar}" class="img-rounded" height="25px" /> {$cfg.user.username|escape}<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-				{if 'staff'|@auth_has_role }<li><a href="{$cfg.abs_root_url}admin">Admin</a></li>{/if}  
-                <li><a href="{$cfg.abs_root_url}account">Account</a></li>
-				<li><a href="{$cfg.abs_root_url}@{$cfg.user.username|escape}">Your Profile</a></li>
-                <li><a href="{$cfg.abs_root_url}signout">Logout</a></li>
-              </ul>
-            </li>
-{else}
-        {if $cfg.enable_feature_signin}
-                {if $cfg.enable_feature_signup}
-                        <li{if $nav_tab == 'signup'} class="active"{/if}><a href="{$cfg.abs_root_url}signup">Create New Account</a></li>
-                {/if}
-                        <li{if $nav_tab == 'signin'} class="active"{/if}><a href="{$cfg.abs_root_url}signin">Sign In</a></li>
-        {/if}
-{/if}
-          </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
+
 	  
 	  <div class="container">

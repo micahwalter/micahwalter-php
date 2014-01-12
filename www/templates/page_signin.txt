@@ -1,40 +1,81 @@
 {assign var='page_title' value='Sign in' nav_tab='signin'}
-{include file='inc_head.txt'}
+{utf8_headers}<!doctype html>
+<html>
+<head>
 
-<h1>Sign In</h1>
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
 
-	<div class="row">
-	<div class="col-md-6">
 
-	{if $error_missing}	<p class="alert alert-error">Please enter your email address and password.</p>{/if}
-	{if $error_nouser}	<p class="alert alert-error">Sorry, we can't find an account with that email address.</p>{/if}
-	{if $error_deleted}	<p class="alert alert-error">Account has been deleted.</p>{/if}
-	{if $error_password}	<p class="alert alert-error">Incorrect password.</p>{/if}
+  <meta charset="utf-8">
 
-	<form action="/signin" method="post" accept-encoding="UTF-8" role="form">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>{$cfg.site_name|escape}{if $page_title} | {$page_title|escape}{/if}</title>
+
+  <link href="{$cfg.abs_root_url}css/admin/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="{$cfg.abs_root_url}js/admin/application.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="container">
+  
+<div class="col-md-4 col-md-offset-4">
+
+  <div class="padded">
+  
+    <div class="login box" style="margin-top: 80px;">
+
+      <div class="box-header">
+        <span class="title">Sign in</span>
+      </div>
+
+      <div class="box-content padded">
+	  
+  	{if $error_missing}	<p class="alert alert-error">Please enter your email address and password.</p>{/if}
+  	{if $error_nouser}	<p class="alert alert-error">Sorry, we can't find an account with that email address.</p>{/if}
+  	{if $error_deleted}	<p class="alert alert-error">Account has been deleted.</p>{/if}
+  	{if $error_password}	<p class="alert alert-error">Incorrect password.</p>{/if}
+	  
+        <form class="separate-sections" action="/signin" method="post" accept-encoding="UTF-8" role="form">
 		<input type="hidden" name="signin" value="1" />
 		<input type="hidden" name="redir" value="{$redir|escape}" />
+		
+          <div class="input-group addon-left">
+            <span class="input-group-addon" href="#">
+              <i class="icon-envelope"></i>
+            </span>
+            <input type="email" name="email" size="40" value="{$email|escape}" placeholder="email">
+          </div>
 
-	        <div class="form-group{if $error_missing && !$email} error{/if}">
-				<label for="email">email address</label>
-					<input type="email" class="form-control" name="email" size="40" value="{$email|escape}" />
-			</div>
+          <div class="input-group addon-left">
+            <span class="input-group-addon" href="#">
+              <i class="icon-key"></i>
+            </span>
+            <input type="password" placeholder="password" name="password" size="40">
+          </div>
 
-	        <div class="form-group{if $error_missing && !$password} error{/if}">
-				<label for="password">password</label>
-					<input type="password" class="form-control" name="password" size="40" />
-			</div>
+          <div>
+           <input type="submit" class="btn btn-blue btn-block" value="SIGN IN" />
+          </div>
 
-	        <div class="form-group">
-				<input type="submit" class="btn btn-default" value="SIGN IN" />
-			</div>
-	</form>
+        </form>
 
-	{if $cfg.enable_feature_password_retrieval}
-	<p><a href="/forgot">Forgotten your password?</a></p>
-	{/if}
-	
-	</div>
-	</div>
+        <div>
+          <a href="{$cfg.abs_root_url}signup">
+              Don't have an account? <strong>Sign Up</strong>
+          </a>
+        </div>
+      </div>
 
-{include file='inc_foot.txt'}
+    </div>
+
+  </div>
+</div>
+</div>
+
+</body>
+</html>

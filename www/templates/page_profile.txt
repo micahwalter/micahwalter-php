@@ -3,7 +3,6 @@
 
 	<div class="row">
 	    <div class="span12 centered-text">
-			<hr>
 			<img src="{$gravatar}" class="img-circle" />
 	        <h1>{ $profile.profile.full_name }</h1>
 	    </div>
